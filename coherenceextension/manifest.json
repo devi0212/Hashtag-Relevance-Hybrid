@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Hashtag Relevance Classifier",
+  "version": "1.0",
+  "description": "Automatically classify posts as coherent or spam based on hashtags.",
+  "permissions": ["scripting", "activeTab"],
+  "host_permissions": [
+    "http://localhost:5000/*",
+    "https://www.linkedin.com/*",
+    "https://x.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://twitter.com/*",
+        "https://www.linkedin.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

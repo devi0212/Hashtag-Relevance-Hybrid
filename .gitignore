@@ -1,0 +1,24 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Environments
+venv/
+.env
+.env.*
+
+# HuggingFace cache / models
+*.bin
+*.pt
+*.h5
+trained/
+huggingface/
+transformers_cache/
+sentence_transformers/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
