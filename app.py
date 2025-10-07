@@ -36,10 +36,10 @@ def hybrid_predict(tweet, hashtags):
     classifier_pred = predict_classifier(tweet)  
 
     if sim_score < 0.25:
-        decision = "❌ Incoherent : The hashtags don't match the tweet's vibe!"
+        decision = "❌ Incoherent : The hashtags don't match the tweet!"
     else:
         if classifier_pred == 1:  
-            decision = "✅ Coherent : That tweet and those hashtags are a match!"
+            decision = "✅ Coherent : That tweet and hashtags are a match!"
         else:
             decision = "❌ Incoherent : The tweet doesn't match the hashtags."
     
