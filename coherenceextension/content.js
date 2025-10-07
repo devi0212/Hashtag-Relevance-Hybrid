@@ -1,4 +1,3 @@
-// Inject styles
 const style = document.createElement("style");
 style.innerHTML = `
   [data-testid="tweet"], /* Twitter/X */
@@ -31,7 +30,6 @@ style.innerHTML = `
 document.head.appendChild(style);
 document.body.style.userSelect = "none";
 
-// Extract and send text and hashtags
 function extractAndSendData(element) {
   if (!element) return console.warn("No element clicked");
 
@@ -54,7 +52,6 @@ function extractAndSendData(element) {
     .catch(err => console.error('Prediction API error:', err));
 }
 
-// Show popup
 function showPopup(message) {
   const existingPopup = document.querySelector("#classifier-popup");
   if (existingPopup) existingPopup.remove();
@@ -76,11 +73,11 @@ function showPopup(message) {
   setTimeout(() => popup.remove(), 5000);
 }
 
-// Attach click listeners
+
 function attachClickListeners() {
   const selectors = [
-    '[data-testid="tweet"]', // Twitter/X
-    'article', // Generic
+    '[data-testid="tweet"]', //X
+    'article', 
     '.post', '.x1lliihq', '.x1iorvi4', '.x1yztbdb', // Facebook
     '._aabd', '.x1a2a7pz', // Instagram
     '.feed-shared-update-v2' // LinkedIn
